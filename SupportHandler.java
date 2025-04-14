@@ -1,4 +1,8 @@
 public abstract class SupportHandler {
-    abstract void set_next(String handler);
-    abstract void handle(String issue);
+    protected SupportHandler next;
+    public SupportHandler set_next(SupportHandler handler){
+            this.next = handler;
+            return next;
+    }
+    abstract boolean handle(String issue);
 }
